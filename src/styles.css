@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('./assets/bootstrap.min.css');
+
+.avatar{
+    border-radius: 20px;
+    float: left;
+}
+
+.card{
+    max-width:340px;
+    justify-self: center;
+}
+
+body{
+    background-image: url('./assets/splash.png');
+    background-attachment: fixed;
+}

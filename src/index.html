@@ -1,13 +1,35 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>LsPromises</title>
+  <title>Contact Card List</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="theme-color" content="blue">
+  <link rel="icon" type="image/x-icon" href="./assets/logo-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/logo-192.png">
 </head>
+
 <body>
   <app-root></app-root>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").then(registration => {
+        console.log("SW Registered!");
+        console.log(registration);
+      }).catch(
+        (err) => {
+          console.log("Failed to register Service Worker:\n" + err);
+        }
+      );
+    }
+  </script>
 </body>
+
 </html>
